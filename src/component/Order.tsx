@@ -91,10 +91,10 @@ const Order:React.FC = () => {
                     <div className="col-12 col-sm-6 col-md-4" style={styleObj}>
                         <div className="from-group">
                             <label htmlFor="customer">Select Customer</label>
-                            <select id="customer" value="use option" className="form-control" onChange={
+                            <select id="customer" className="form-control" onChange={
                                 (e)=>(getCustomerById(e.target.value))}>
 
-                                <option value="use option" disabled>Select</option>
+                                <option value="">Select Value</option>
 
                                 {customers.map((customer,index)=>(
                                     <option key={index} value={customer._id}>{customer.name}</option>
@@ -121,10 +121,10 @@ const Order:React.FC = () => {
                     <div className="col-12 col-sm-6 col-md-3" style={styleObj}>
                         <div className="from-group">
                             <label htmlFor="customer">Select Product</label>
-                            <select id="product" value="use option" className="form-control" onChange={
+                            <select id="product" className="form-control" onChange={
                                 (e)=>(getProductById(e.target.value))
                             }>
-                                <option value="use option" defaultValue="c" disabled>Select</option>
+                                <option value="">Select Value</option>
                                 {products.map((product, index)=>(
                                     <option key={index} value={product._id}>{product.name}</option>
                                 ))}

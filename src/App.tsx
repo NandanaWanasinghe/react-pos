@@ -5,6 +5,8 @@ import Home from "./component/Home";
 import Customer from "./component/Customer";
 import Product from "./component/Product";
 import Order from "./component/Order";
+import Login from "./component/Login";
+import Signup from "./component/Signup";
 
 function App() {
     return(
@@ -35,6 +37,9 @@ function App() {
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/product">Products</Link>
                                 </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/login">Login</Link>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -47,6 +52,8 @@ function App() {
                 <Route path='/customer' element={<Customer/>}/>
                 <Route path='/product' element={<Product/>}/>
                 <Route path='/order' element={<Order/>}/>
+                <Route path='/login' element={<Login/>}/>
+                <Route path='/signUp' element={<Signup/>}/>
             </Routes>
         </Router>
     )
