@@ -1,15 +1,37 @@
 import React, {useState} from "react";
+import axios from "axios";
 import {Link} from "react-router-dom";
 
-const Login:React.FC =()=> {
+const Login:React.FC = ()=>{
 
-    const [email,setEmail] = useState('');
-    const [password,setPassword] = useState('');
+    const [email, setEmail]=useState('');
+    const [password, setPassword]=useState('');
 
-    const login=()=>{
-        console.log(email)
-        console.log(password)
+
+    const login=async ()=>{
+        try{
+            const response = await axios.post('http://localhost:3000/api/v1/users/login',{
+                email,password
+            });
+
+            //==============
+            const expirationDate = new Date();
+            expirationDate.setDate(expirationDate.getDate()+2);
+
+            const cookieValue=encodeURIComponent('token')+'='
+                +encodeURIComponent(response.data)+'; expires='+expirationDate.toUTCString()+'; path=/';
+
+            document.cookie=cookieValue;
+            console.log(response.data);
+
+            setEmail('');
+            setPassword('');
+
+        }catch (e){
+            console.log(e)
+        }
     }
+
 
     return(
         <>

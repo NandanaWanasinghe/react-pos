@@ -3,6 +3,7 @@ import MinQtyCard from "../card/MinQtyCard";
 import React, {useEffect, useState} from "react";
 import Product from "./Product";
 import axios from "axios";
+import DefaultChart from "../card/DefaultChart";
 
 const Home:React.FC = () => {
 
@@ -75,7 +76,7 @@ const Home:React.FC = () => {
 
                 <div className="row">
                     <div className="col-12 col-md-9">
-
+                            <DefaultChart/>
                     </div>
                     <div className="col-12 col-md-3">
                         {products.map((prod,index)=>(
